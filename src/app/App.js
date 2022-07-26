@@ -1,7 +1,16 @@
 import React from 'react';
+import getHomeList from '../api/MoviesApi';
 
 export const App = () => {
-  console.log(process.env.REACT_APP_API_KEY);
+
+  const getMovie = async () => {
+    const res = await getHomeList;
+    console.log(res);
+    return res;
+  }
+
+  getMovie();
+
   return (
     <div >
       <h1>Hello World</h1>
