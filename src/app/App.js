@@ -1,15 +1,13 @@
-import React from 'react';
-import getHomeList from '../api/MoviesApi';
+import React, { useEffect, useState } from 'react';
+import {getHomeList} from '../helpers/api/MoviesApi';
 
 export const App = () => {
+  const [movie, setMovie] = useState({});
+  console.log(movie);
 
-  const getMovie = async () => {
-    const res = await getHomeList;
-    console.log(res);
-    return res;
-  }
-
-  getMovie();
+  useEffect(() => {
+    getHomeList().then(result => setMovie(result));
+  }, [])
 
   return (
     <div >
