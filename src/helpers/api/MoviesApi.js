@@ -1,9 +1,11 @@
-import { API_KEY } from "../constantes";
 import { API } from "../constantes";
-import {get} from '../constantes';
+import { get} from "./base";
 
 export const getHomeList = async () => {
- const res = await get(`${API}/movie/now_playing?api_key=${API_KEY}`);
-
+ const res = await get(`${API}/movie/now_playing`);
  return res.data;
 }
+
+// export default {
+//   getHomeList: get(`${API}/movie/now_playing`),
+// }
