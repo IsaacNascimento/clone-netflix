@@ -8,6 +8,7 @@ import { getTerrorCategory } from './terrorApi';
 import { getRomanceCategory } from './romanceApi';
 import { getDocumentaryCategory } from './documentaryApi';
 import { getPostImg } from './getPosterImg';
+import { getMovieInfo } from './getMoviesInfo';
 
 export {
   getHomeList,
@@ -20,6 +21,7 @@ export {
   getRomanceCategory,
   getDocumentaryCategory,
   getPostImg,
+  getMovieInfo,
 };
 
 export const getAll = async () => {
@@ -29,7 +31,7 @@ export const getAll = async () => {
       item: await getNetflixShows(),
     },
     {
-      title: 'Recomendados',
+      title: 'Recomendados para Você',
       item: await getTrendingAllWeek(),
     },
     {

@@ -10,3 +10,17 @@ body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
 }
+
+body::-webkit-scrollbar{
+    background-color: transparent;
+    width: 5px;
+}
+body::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 100vw;
+    width: 20px;
+}
+
+.lists {
+  margin-top: -100px;
+}

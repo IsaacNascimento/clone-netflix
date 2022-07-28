@@ -1,6 +1,6 @@
-import React, { Fragment } from "react";
-import "../app/assets/movieRow.css";
-import { posterImgApi } from "../../helpers/constantes";
+import React from 'react';
+import '../app/assets/movieRow.css';
+import { ImgApi } from '../../helpers/constantes';
 
 export const MovieRow = ({ title, id, items }) => {
   //   console.log(items);
@@ -9,12 +9,13 @@ export const MovieRow = ({ title, id, items }) => {
       <h2 key={id}>{title}</h2>
       <div className="movieRow--listArea">
         <div className="movieRow--list">
+          {items.results.length <= 0 && <h1>Carregando...</h1>}
           {items.results.length > 0 &&
             items.results.map((content, index) => (
               <div key={index} className="movieRow--item">
                 <img
                   alt={content.original_title}
-                  src={`${posterImgApi}${content.poster_path}`}
+                  src={`${ImgApi}${content.poster_path}`}
                 />
               </div>
             ))}
