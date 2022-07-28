@@ -7,6 +7,7 @@ import { getComedyCategory } from './comedyApi';
 import { getTerrorCategory } from './terrorApi';
 import { getRomanceCategory } from './romanceApi';
 import { getDocumentaryCategory } from './documentaryApi';
+import { getPostImg } from './getPosterImg';
 
 export {
   getHomeList,
@@ -18,6 +19,7 @@ export {
   getTerrorCategory,
   getRomanceCategory,
   getDocumentaryCategory,
+  getPostImg,
 };
 
 export const getAll = async () => {
