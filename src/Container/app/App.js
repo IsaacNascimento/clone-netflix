@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { getAll } from '../../helpers/api';
 import { getMovieInfo } from '../../helpers/api';
-import { MovieRow } from '../components/MovieRow';
-import { PosterMovie } from '../components/PosterMovie';
+import { MovieRow,Header,PosterMovie } from '../components';
 import './assets/App.css';
 
 export const App = () => {
   const [state, setState] = useState([]);
-  // console.log('[State]: ', state);
   const [posterMovie, setPosterMovie] = useState(null);
 
   useEffect(() => {
@@ -36,8 +34,9 @@ export const App = () => {
 
   return (
     <div className="page">
-      <section className="lists">
+        <Header />
         {posterMovie && <PosterMovie content={posterMovie} />}
+      <section className="lists">
         {state.map((result, index) => (
           <div key={index}>
             <MovieRow
