@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { getAll } from '../../helpers/api';
 import { getMovieInfo } from '../../helpers/api';
-import { MovieRow,Header,PosterMovie } from '../components';
+import { MovieRow, Header, PosterMovie } from '../components';
 import './assets/App.css';
 
 export const App = () => {
   const [state, setState] = useState([]);
   const [posterMovie, setPosterMovie] = useState(null);
+  const [blackHeader, setBlackHeader] = useState(false);
+  console.log(blackHeader);
 
   useEffect(() => {
     const loadAll = async () => {
@@ -32,10 +34,24 @@ export const App = () => {
     loadAll();
   }, [setState]);
 
+  useEffect(() => {
+    const scrollListener = () => {
+      if (window.scrollY > 10) {
+        setBlackHeader(true);
+      } else {
+        setBlackHeader(false);
+      }
+    };
+    window.addEventListener('scroll', scrollListener);
+    return () => {
+      window.removeEventListener('scroll', scrollListener);
+    };
+  }, []);
+
   return (
     <div className="page">
-        <Header />
-        {posterMovie && <PosterMovie content={posterMovie} />}
+      <Header blackGroundHeader={blackHeader} />
+      {posterMovie && <PosterMovie content={posterMovie} />}
       <section className="lists">
         {state.map((result, index) => (
           <div key={index}>

@@ -4,10 +4,14 @@ import '../app/assets/moviePoster.css';
 
 export const PosterMovie = ({ content }) => {
   const genres = content.genres.map((item) => item.name);
-  console.log(genres);
-  console.log('aqui: ', content);
+  // console.log(genres);
+  // console.log('aqui: ', content);
 
   const firstDate = new Date(content.first_air_date);
+
+  const porcentAverage = content.vote_average * 10;
+  const formatPorcent = porcentAverage.toFixed();
+  // console.log(formatPorcent);
 
   return (
     <section
@@ -23,7 +27,7 @@ export const PosterMovie = ({ content }) => {
           <div className="featured--name">{content.original_name}</div>
           <div className="featured--info">
             <div className="featured--points">
-              {content.vote_average} pontos
+              {formatPorcent}% de relevância
             </div>
             <div className="featured--year">{firstDate.getFullYear()}</div>
             <div className="featured-seasons">
