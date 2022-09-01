@@ -64,6 +64,11 @@ export const App = () => {
           </div>
         ))}
       </section>
+      <footer>
+        Feito com <span role='img' aria-label='coracao'>❤️</span> por Isaac <br/>
+        All rights to <a href='https://www.netflix.com/browse'>Netflix</a><br/>
+        All data get from <a href='https://www.themoviedb.org'>Themoviedb.org</a> API
+      </footer>
     </div>
   );
 };

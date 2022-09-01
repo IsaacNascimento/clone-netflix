@@ -7,7 +7,7 @@ export const Header = ({ blackGroundHeader }) => {
   return (
     <header className={blackGroundHeader ? 'black' : ''}>
       <div className="header--logo">
-        <img src={netflixImg} alt="netflixImg" />
+        <img className="netflix-logo" src={netflixImg} alt="netflixImg" />
       </div>
       <div className="header--user">
         <img src={netflixAvatarImg} alt="avatarNetflix" />

@@ -1,12 +1,23 @@
-import React from 'react';
-import '../app/assets/movieRow.css';
-import { ImgApi } from '../../helpers/constantes';
+import React from "react";
+import "../app/assets/movieRow.css";
+import { ImgApi } from "../../helpers/constantes";
+import { MdNavigateBefore, MdOutlineNavigateNext } from "react-icons/md";
 
 export const MovieRow = ({ title, id, items }) => {
   //   console.log(items);
   return (
     <div className="movieRow">
       <h2 key={id}>{title}</h2>
+      <div className="movieRow--left">
+        <span>
+          <MdNavigateBefore />
+        </span>
+      </div>
+      <div className="movieRow--right">
+        <span>
+          <MdOutlineNavigateNext />
+        </span>
+      </div>
       <div className="movieRow--listArea">
         <div className="movieRow--list">
           {items.results.length <= 0 && <h1>Carregando...</h1>}
